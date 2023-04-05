@@ -5,39 +5,92 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test</title>
-    <link rel="stylesheet" href="styletest.css">
+    <!-- <link rel="stylesheet" href="../style.css"> -->
+    <link rel="stylesheet" href="./styletest.css">
+    <title>Document</title>
 </head>
 
 <body>
+    <!-- <header>
+        <div class="min-nav">
+            <h3 class="logo">Nocteln Games</h3>
 
-    <nav class="navbar">
-        <a href="#" class="logo">ADVENTURE</a>
-        <div class="nav-links">
+            <div class="nav-links">
+                <ul>
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">lorem</a></li>
+                    <li><a href="#">lorem</a></li>
+                    <li><a href="#">lorem</a></li>
+                    <li><a href="#">lorem</a></li>
+                </ul>
+            </div>
+            <label for="check">
+                <input type="checkbox" id="check" class="menu-hamburger" />
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+        <div class="max-nav">
+            <h1>Nocteln Games</h1>
             <ul>
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">lorem</a></li>
-                <li><a href="#">lorem</a></li>
-                <li><a href="#">lorem</a></li>
-                <li><a href="#">lorem</a></li>
+                <li id="home" class="hover_underline_anim"><a href="#">Acceuil</a></li>
+                <li id="jeu_un"><a href="./snake/index.html">Jeu1</a> </li>
+                <li id="jeu_deux"><a href="./dino/index.html">Jeu2</a></li>
+                <li id="jeu_trois"><a href="">Jeu3</a></li>
             </ul>
         </div>
-        <img src="./assets/img/menu-btn.png" alt="menu hambergeur" class="menu-hamburger">
-    </nav>
 
-    <header>
 
-    </header>
+    </header> -->
 
-    <script>
-        const menuHamburger = document.querySelector(".menu-hamburger")
-        const navLinks = document.querySelector(".nav-links")
+    <section class="jeu">
+        <div class="parametres">
+            <h2>Titre</h2>
+            <h3>Principe :</h3>
+            <ul>
+                <li>Lorem, ipsum.</li>
+                <li>lorem</li>
+                <li>zegRG</li>
+            </ul>
+            <h3>Comment jouer :</h3>
+            <ol>
+                <li>eVRQ</li>
+                <li>lorem</li>
+                <li>RGBFB</li>
+            </ol>
+            <div class="buttons">
+                <button class="btn"><span></span>
+                    <p data-start="good luck!" data-text="start!" data-title="new game"></p>
+                </button>
+            </div>
+        </div>
+        <div class="espace-jeu"></div>
+    </section>
 
-        menuHamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('mobile-menu')
-        })
-    </script>
 
+
+    <!-- <footer>
+        <div class="row">
+            <div class="about">
+                <h3>About Us</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo quis nisi consequat ultrices.
+                </p>
+            </div>
+            <div class="links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer> -->
+
+
+    <script src="../script.js"></script>
 </body>
 
 </html>

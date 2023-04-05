@@ -4,8 +4,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  text-decoration: none;
-  list-style: none;
 }
 body {
     /* background: #dadada;*/
@@ -15,6 +13,11 @@ body {
     padding: 0;
     min-width: 100%;
     overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
 }
 
 /******************** SCROLL BAR  ***********************/
@@ -42,7 +45,7 @@ body {
 
 
 .hero {
-  min-height: 100vh;
+  min-height: 110vh;
   text-align: center;
 }
 .titre {
@@ -77,6 +80,7 @@ header .max-nav{
 }
 header .max-nav ul {
   margin: 0;
+
   padding: 10px 25px;
   display: flex;
   justify-content: space-between;
@@ -94,27 +98,30 @@ header  .max-nav h1 {
   padding-left: 50px;
 }
 
-header .max-nav a {
+header  a {
   position: relative;
-  color: #18272F;
+  color: #000;
   text-decoration: none;
 }
 
-header .max-nav a::before {
+header  a::before {
     content: '';
     position: absolute;
     width: 100%;
     height: 4px;
     border-radius: 4px;
-    background-color: #18272F;
+    background-color: #000;
     bottom: 0;
     left: 0;
     transform-origin: right;
     transform: scaleX(0);
     transition: transform .3s ease-in-out;
   }
+  header .active a::before {
+    background-color: #ed3c57;
+  }
   
-  header .max-nav a:hover::before {
+  header  a:hover::before {
   transform-origin: left;
   transform: scaleX(1);
 }
@@ -124,12 +131,14 @@ header .max-nav a::before {
   align-items: center;
 }
 .min-nav a {
-  color: white;
+  color: #000;
+  text-decoration: none;
 }
 
 .min-nav .logo {
   font-size: 2em;
   font-weight: bold;
+  position: absolute;
 }
 
 .min-nav .nav-links ul {
@@ -145,14 +154,68 @@ header .max-nav a::before {
   font-weight: 60px;
 }
 
-.min-nav .menu-hamburger {
-  display: none;
-  position: absolute;
-  top: 50px;
-  right: 50px;
-  width: 35px;
-}
 
+
+label{
+  display:flex;
+   flex-direction:column;
+   width:70px;
+   cursor:pointer;
+   position: absolute;
+  }
+  
+  label span{
+   background: #000;
+   border-radius:10px;
+   height:7px;
+   margin: 7px 0;
+   transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
+ 
+ }
+ 
+ 
+ span:nth-of-type(1){
+   width:50%;
+   
+ }
+ 
+ span:nth-of-type(2){
+   width:100%;
+ }
+ 
+ 
+ span:nth-of-type(3){
+   width:75%;
+  
+ }
+ 
+ 
+ input[type="checkbox"]{
+   display:none;
+ }
+ 
+ 
+ input[type="checkbox"]:checked ~ span:nth-of-type(1){
+   transform-origin:bottom;
+   transform:rotatez(45deg) translate(8px,0px)
+ }
+ 
+ 
+ input[type="checkbox"]:checked ~ span:nth-of-type(2){
+   
+   transform-origin:top;
+   transform:rotatez(-45deg)
+ }
+ 
+ 
+ input[type="checkbox"]:checked ~ span:nth-of-type(3){
+   
+   transform-origin:bottom;
+   width:50%;
+   transform: translate(30px,-11px) rotatez(45deg);
+ 
+ }
+ 
 
 @media screen and (max-width:1000px) {
 
@@ -162,38 +225,34 @@ header .max-nav a::before {
 
   .min-nav {
       padding: 0;
-        position: absolute;
+        position: fixed;
         padding: 50px;
         display: flex;
-        justify-content: space-between;
+        flex-direction: row-reverse;
         width: 100%;
         box-sizing: border-box;
         align-items: center;
         background-color: rgba(255, 255, 255, 0.8);
-        
-      }
-      .min-nav .menu-hamburger {
-        display: block;
+        z-index: 3;
       }
       .min-nav .logo {
-        position: absolute;
-      top: 50px;
       left: 50px;
-      color: red;
+      color: #000;
+      z-index: 4;
   }
   .min-nav .nav-links {
       top: 0;
       left: 0;
       position: absolute;
       background: rgba(255, 255, 255, 0.20);
-      backdrop-filter: blur(7px);
+      backdrop-filter: blur(30px);
       width: 100%;
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       margin-top: -100vh;
-      transition: .5s linear;
+      transition: .7s linear;
       
     }
   .min-nav .nav-links.mobile-menu {
@@ -344,6 +403,14 @@ header .max-nav a::before {
     display: none;
   }
 
+  .text-jouer h2 {
+    padding-bottom: 2%;
+  }
+
+  .text-jouer p {
+    padding-bottom: 2%;
+  }
+
   .text-jouer button {
     display: flex;
   }
@@ -368,11 +435,10 @@ header .max-nav a::before {
 footer {
   background-color: #333;
   color: #fff;
-  padding: 20px;
+  padding: 2%;
   bottom: 0;
   width: 100%;
   height: auto;
- padding-bottom: 0; 
 }
 
 footer h3 {
@@ -414,27 +480,6 @@ footer a:hover {
 }
 
 @media screen and (max-width: 1000px) {
-/* 
-  header .max-nav {
-    display: none;
-  }
-  
-  header .min-nav {
-      display: grid;
-      grid-template-columns: 80% 20%;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      padding: 10px;
-      align-items: center;
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px); 
-      background-color: rgba(255, 255, 255, 0.8); 
-      transition: 0.3s;
-      z-index: 9999;
-  }
-
-   */
   
   footer .row {
     flex-direction: column;
@@ -452,3 +497,24 @@ footer a:hover {
 
 
 
+/********************* PAGES DE JEU ***********************/
+.jeu {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 25vh;
+}
+
+.parametres {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 35px;
+  border-radius: 25px;
+  border: #44d8a4 solid 2px;
+}
+
+.espace-jeu {
+  border: #568fa6 solid 2px;
+  padding: 200px;
+}

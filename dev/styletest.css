@@ -1,97 +1,201 @@
-* {
+*{
+    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+  
+  .buttons button {
+    width: 150px;
+    height: 50px;
+    background-color: #eee;
+    margin: 20px;
+    color: #568fa6;
+    position: relative;
+    overflow: hidden;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+  }
+  
+  .buttons button:before, .buttons button:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #44d8a4;
+    transition: all 0.3s cubic-bezier(0.35, 0.1, 0.25, 1);
+  }
+  
+  .buttons button:before {
+    right: 0;
+    top: 0;
+    transition: all 0.5s cubic-bezier(0.35, 0.1, 0.25, 1);
+  }
+  
+  .buttons button:after {
+    left: 0;
+    bottom: 0;
+  }
+  
+  .buttons button span {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
     margin: 0;
     padding: 0;
-    text-decoration: none;
-    list-style: none;
-}
-
-body {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-header {
-    height: 100vh;
-    width: 100vw;
-    background-image: url('../assets/img/landscape.jpg');
-    background-size: cover;
-}
-
-.navbar {
+    z-index: 1;
+  }
+  
+  .buttons button span:before, .buttons button span:after {
+    content: "";
     position: absolute;
-    padding: 50px;
-    display: flex;
-    justify-content: space-between;
+    width: 2px;
+    height: 0;
+    background-color: #44d8a4;
+    transition: all 0.3s cubic-bezier(0.35, 0.1, 0.25, 1);
+  }
+  
+  .buttons button span:before {
+    right: 0;
+    top: 0;
+    transition: all 0.5s cubic-bezier(0.35, 0.1, 0.25, 1);
+  }
+  
+  .buttons button span:after {
+    left: 0;
+    bottom: 0;
+  }
+  
+  .buttons button p {
+    padding: 0;
+    margin: 0;
+    transition: all 0.4s cubic-bezier(0.35, 0.1, 0.25, 1);
+    position: absolute;
     width: 100%;
-    box-sizing: border-box;
-    align-items: center;
-    
-}
-.navbar a {
-    color: white;
-}
-
-.navbar .logo {
-    font-size: 2em;
-    font-weight: bold;
-}
-
-.navbar .nav-links ul {
-    display: flex;
-}
-.navbar .nav-links ul li{
-    margin: 0 25px;
-}
-.navbar .nav-links ul li.active a {
-    color: #ed3c57;
-    font-weight: 600;
-}
-
-.navbar .menu-hamburger {
-    display: none;
+    height: 100%;
+  }
+  
+  .buttons button p:before, .buttons button p:after {
     position: absolute;
-    top: 50px;
-    right: 50px;
-    width: 35px;
+    width: 100%;
+    transition: all 0.4s cubic-bezier(0.35, 0.1, 0.25, 1);
+    z-index: 1;
+    left: 0;
+  }
+  
+  .buttons button p:before {
+    content: attr(data-title);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .buttons button p:after {
+    content: attr(data-text);
+    top: 150%;
+    color: #44d8a4;
+  }
+  
+  .buttons button:hover:before, .buttons button:hover:after {
+    width: 100%;
+  }
+  
+  .buttons button:hover span {
+    z-index: 1;
+  }
+  
+  .buttons button:hover span:before, .buttons button:hover span:after {
+    height: 100%;
+  }
+  
+  .buttons button:hover p:before {
+    top: -50%;
+    transform: rotate(5deg);
+  }
+  
+  .buttons button:hover p:after {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .buttons button.start {
+    background-color: #44d8a4;
+    box-shadow: 0px 5px 10px -10px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+  }
+  
+  .buttons button.start p:before {
+    top: -50%;
+    transform: rotate(5deg);
+  }
+  
+  .buttons button.start p:after {
+    color: white;
+    transition: all 0s ease;
+    content: attr(data-start);
+    top: 50%;
+    transform: translateY(-50%);
+    animation: start 0.3s ease;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes start {
+    from {
+      top: -50%;
+    }
+  }
+  
+  .buttons button.start:hover:before, .buttons button.start:hover:after {
+    display: none;
+  }
+  
+  .buttons button.start:hover span {
+    display: none;
+  }
+  
+  .buttons button:active {
+    outline: none;
+    border: none;
+  }
+  
+  .buttons button:focus {
+    outline: 0;
+  }
+
+
+
+
+
+
+
+
+
+.jeu {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 25vh;
 }
 
+.parametres {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 35px;
+    border-radius: 25px;
+    border: #44d8a4 solid 2px;
+}
 
-@media screen and (max-width:900px) {
-    
-    .navbar {
-        padding: 0;
-    }
-    .navbar .menu-hamburger {
-        display: block;
-    }
-    .navbar .logo {
-        position: absolute;
-        top: 50px;
-        left: 50px;
-    }
-    .nav-links {
-        top: 0;
-        left: 0;
-        position: absolute;
-        background: rgba(255, 255, 255, 0.20);
-        backdrop-filter: blur(7px);
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: -100vh;
-        transition: .5s linear;
-    }
-    .nav-links.mobile-menu {
-        margin-top: 0;
-    }
-    .nav-links ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .navbar .nav-links ul li{
-        margin:  25px 0;
-        font-size: 1.5em;
-    }
+.espace-jeu {
+    border: #568fa6 solid 2px;
+    padding: 200px;
 }

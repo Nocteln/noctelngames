@@ -1,7 +1,7 @@
-const menuHamburger = document.querySelector(".menu-hamburger")
-const navLinks = document.querySelector(".nav-links")
-let header = document.querySelector(".header");
-let scroll = 0;
+const menuHamburger = document.querySelector(".menu-hamburger");
+const navLinks = document.querySelector(".nav-links");
+const maxnav = document.querySelector(".max-nav");
+let scroll;
 
 const target = document.getElementById("text-anim");
 let array = [
@@ -17,22 +17,20 @@ let array = [
 let wordIndex = 0;
 letterIndex = 0;
 
-let footer = document.querySelector("footer");
-
 window.addEventListener("scroll", () => {
-  if (scroll < window.scrollY) {
-    header.style.top = "-200px";
+  if (scroll > window.scrollY) {
+    maxnav.style.top = 0;
   } else {
-    header.style.top = 0;
+    maxnav.style.top = "-100px";
   }
   scroll = window.scrollY;
 });
-
 //------------------------------------
 
-menuHamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('mobile-menu')
-})
+menuHamburger.addEventListener("click", () => {
+  console.log("cc");
+  navLinks.classList.toggle("mobile-menu");
+});
 
 //--------------------------------------
 

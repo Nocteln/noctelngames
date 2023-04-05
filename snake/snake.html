@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style/rejouer.css">
+    <link rel="stylesheet" href="../style/retouracceuilbtn.css">
+</head>
+<style>
+    footer {
+        position: absolute;
+    }
+
+
+
+    .nope {
+        display: none;
+    }
+
+    .nope h1 {
+        padding-bottom: 20px;
+    }
+
+    @media screen and (max-width:1000px) {
+        .jeu {
+            display: none;
+
+        }
+
+
+        .nope {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding-top: 200px;
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <div class="min-nav">
+            <h3 class="logo">Nocteln Games</h3>
+
+            <div class="nav-links">
+                <ul>
+                    <li><a href="../index.html">Acceuil</a></li>
+                    <li class="active"><a href="#">Snake</a></li>
+                    <li><a href="#">jeu2</a></li>
+                    <li><a href="#">jeu3</a></li>
+                    <li><a href="#">lorem</a></li>
+                </ul>
+            </div>
+            <label for="check">
+                <input type="checkbox" id="check" class="menu-hamburger" />
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+        <div class="max-nav">
+            <h1>Nocteln Games</h1>
+            <ul>
+                <li id="home" class="hover_underline_anim"><a href="../index.html">Acceuil</a></li>
+                <li id="jeu_un"><a href="./snake/index.html">Snake</a> </li>
+                <li id="jeu_deux"><a href="./dino/index.html">Jeu2</a></li>
+                <li id="jeu_trois"><a href="">Jeu3</a></li>
+            </ul>
+        </div>
+
+
+    </header>
+
+    <div class="nope">
+        <h1>Jeu non disponible dans ce format !</h1>
+        <button onclick="window.location.href='../index.html'"> <svg height="16" width="16"
+                xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1024 1024">
+                <path
+                    d="M874.690416 495.52477c0 11.2973-9.168824 20.466124-20.466124 20.466124l-604.773963 0 188.083679 188.083679c7.992021 7.992021 7.992021 20.947078 0 28.939099-4.001127 3.990894-9.240455 5.996574-14.46955 5.996574-5.239328 0-10.478655-1.995447-14.479783-5.996574l-223.00912-223.00912c-3.837398-3.837398-5.996574-9.046027-5.996574-14.46955 0-5.433756 2.159176-10.632151 5.996574-14.46955l223.019353-223.029586c7.992021-7.992021 20.957311-7.992021 28.949332 0 7.992021 8.002254 7.992021 20.957311 0 28.949332l-188.073446 188.073446 604.753497 0C865.521592 475.058646 874.690416 484.217237 874.690416 495.52477z">
+                </path>
+            </svg>
+            <span>Retour </span>
+        </button>
+    </div>
+    <section class="jeu">
+        <div class="parametres">
+            <h2>Snake</h2>
+            <h3>Principe :</h3>
+            <ul>
+                <li>Manger des pommes</li>
+                <li>s'agrandir</li>
+            </ul>
+            <h3>Comment jouer :</h3>
+            <ol>
+                <li>déplacez vous avec les flèches</li>
+                <li>rafraichissez la page pour recommencer</li>
+                <li>Ne dépassez pas les bords !</li>
+                <li>Ne vous touchez pas !</li>
+            </ol>
+            <div class="buttons">
+                <button class="btn" onClick="window.location.reload();"><span></span>
+                    <p data-start="good luck!" data-text="start!" data-title="new game"></p>
+                </button>
+            </div>
+            <h3>Points : <span id="score">0</span></h3>
+            <h3>Record : <span id="record">0</span></h3>
+        </div>
+
+        <canvas id="board"></canvas>
+    </section>
+
+    <footer>
+        <div class="row">
+            <div class="about">
+                <h3>About Us</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo quis nisi consequat ultrices.
+                </p>
+            </div>
+            <div class="links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    </div>
+    <script src="./snake.js"></script>
+    <script src="../script.js"></script>
+</body>
+
+</html>

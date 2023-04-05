@@ -17,24 +17,30 @@
 <body>
 
   <header>
-  <div class="min-nav">
-    <a href="#" class="logo">Nocteln Games</a>
-    <div class="nav-links">
-      <ul>
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">lorem</a></li>
-        <li><a href="#">lorem</a></li>
-        <li><a href="#">lorem</a></li>
-        <li><a href="#">lorem</a></li>
-      </ul>
+    <div class="min-nav">
+      <h3 class="logo">Nocteln Games</h3>
+
+      <div class="nav-links">
+        <ul>
+          <li class="active"><a href="#">Acceuil</a></li>
+          <li><a href="./snake/snake.html">Snake</a></li>
+          <li><a href="#">jeu2</a></li>
+          <li><a href="#">jeu3</a></li>
+          <li><a href="#">lorem</a></li>
+        </ul>
+      </div>
+      <label for="check">
+        <input type="checkbox" id="check" class="menu-hamburger" />
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
     </div>
-    <img src="../assets/img/menu-btn.png" alt="menu hambergeur" class="menu-hamburger">
-  </div>
     <div class="max-nav">
-      <h1>Nocteln</h1>
+      <h1>Nocteln Games</h1>
       <ul>
         <li id="home" class="hover_underline_anim"><a href="#">Acceuil</a></li>
-        <li id="jeu_un"><a href="./snake/index.html">Jeu1</a> </li>
+        <li id="jeu_un"><a href="./snake/snake.html">Snake</a> </li>
         <li id="jeu_deux"><a href="./dino/index.html">Jeu2</a></li>
         <li id="jeu_trois"><a href="">Jeu3</a></li>
       </ul>
@@ -61,13 +67,13 @@
       <div class="quiconce">
         <div class="container-cercle">
           <h1 id="text">Snake</h1>
-          <h3 id="play">Jouer</h3>
+          <h3 id="play"><a href="./snake/snake.html">Jouer</a></h3>
         </div>
         <div class="text-jouer">
           <h2>Snake</h2>
           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum recusandae error voluptatum repellendus
             quibusdam saepe?</p>
-          <button class="cssbuttons-io-button"> Jouer
+          <button class="cssbuttons-io-button" onclick="window.location.href='./snake/snake.html'"> Jouer
             <div class="icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
                 <path fill="none" d="M0 0h24v24H0z"></path>
@@ -137,12 +143,12 @@
           <li><a href="#">Contact</a></li>
         </ul>
       </div>
-   </div>
+    </div>
   </footer>
 
 
   <script src="script.js"></script>
-  
+
 
 </body>
 
