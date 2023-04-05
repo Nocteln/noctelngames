@@ -37,3 +37,9 @@
     top: 100px;
     border-radius: 50%;
 }
+
+p {
+    text-align: center;
+    padding-top: 50%;
+    font-size: 25px;
+}

@@ -1,3 +1,5 @@
+const text = document.querySelector("p");
+const espaceDeJeu = document.getElementById("game");
 var block = document.getElementById("block");
 var hole = document.getElementById("hole");
 var character = document.getElementById("character");
@@ -7,12 +9,14 @@ let gameStart = false;
 
 window.addEventListener("keydown", (e) => {
   if ((e.key = " ")) {
+    text.style.display = "none";
     gameStart = true;
     jump();
   }
 });
-window.addEventListener("click", () => {
+espaceDeJeu.addEventListener("click", () => {
   if (gameStart == false) {
+    text.style.display = "none";
     gameStart = true;
   }
 });
@@ -42,10 +46,12 @@ setInterval(function () {
       blockLeft > -50 &&
       (cTop < holeTop || cTop > holeTop + 130))
   ) {
+    gameStart = false;
     alert("Game over. Score: " + (counter - 1));
+    block.style.animation = "none";
+    hole.style.animation = "none";
     character.style.top = 100 + "px";
     counter = 0;
-    gameStart = false;
   }
 }, 10);
 
