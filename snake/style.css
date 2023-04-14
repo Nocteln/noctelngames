@@ -1,6 +1,7 @@
 body {
     font-family: 'Courier New', Courier,monospace;
     text-align: center;
+    
 }
 .container {
     display: flex;
@@ -41,3 +42,28 @@ button  {
     box-shadow: inset 4px 4px 12px #c5c5c5,
                 inset -4px -4px 12px #ffffff;
    }
+
+   .nope {
+    display: none;
+}
+
+.nope h1 {
+    padding-bottom: 20px;
+}
+
+
+
+@media screen and (max-width:1000px) {
+    .jeu {
+        display: none;
+
+    }
+
+
+    .nope {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 200px;
+    }
+}

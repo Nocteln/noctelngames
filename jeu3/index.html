@@ -17,26 +17,22 @@
     }
 
     .nope {
-        display: none;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 200px;
     }
 
     .nope h1 {
         padding-bottom: 20px;
     }
 
-    @media screen and (max-width:1200px) {
-        .jeu {
-            display: none;
+    h3 {
+        padding: 20px;
+    }
 
-        }
-
-
-        .nope {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            padding-top: 200px;
-        }
+    td {
+        padding: 5px;
     }
 </style>
 
@@ -50,8 +46,8 @@
                 <ul>
                     <li><a href="../index.html">Acceuil</a></li>
                     <li> <a href="../snake/snake.html">Snake</a></li>
-                    <li class="active"><a href="#">flappy</a></li>
-                    <li><a href="../jeu3/index.html">jeu3</a></li>
+                    <li><a href="../flappy/flappy.html">flappy</a></li>
+                    <li class="active"><a href="#">jeu3</a></li>
                 </ul>
             </div>
             <label for="check">
@@ -67,7 +63,7 @@
                 <li id="home" class="hover_underline_anim"><a href="../index.html">Acceuil</a></li>
                 <li id="jeu_un"><a href="../snake/snake.html">Snake</a> </li>
                 <li id="jeu_deux"><a href="../flappy/flappy.html">flappy</a></li>
-                <li id="jeu_trois"><a href="../jeu3/index.html">Jeu3</a></li>
+                <li id="jeu_trois"><a href="#">Jeu3</a></li>
             </ul>
         </div>
 
@@ -77,7 +73,7 @@
 
 
     <div class="nope">
-        <h1>Jeu non disponible dans ce format !</h1>
+        <h1>Jeu pas encore disponible !</h1>
         <button onclick="window.location.href='../index.html'"> <svg height="16" width="16"
                 xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1024 1024">
                 <path
@@ -86,38 +82,24 @@
             </svg>
             <span>Retour </span>
         </button>
-    </div>
-    <section class="jeu">
-        <div class="parametres">
-            <h2>Snake</h2>
-            <h3>Principe :</h3>
-            <ul>
-                <li>éviter les poteaux noir</li>
-                <li>Faire le plus grand score posible</li>
-            </ul>
-            <h3>Comment jouer :</h3>
-            <ol>
-                <li>volez avec espace ou le clic</li>
-                <li>rafraichissez la page pour recommencer</li>
-                <li>Ne tombez pas !</li>
-                <li>Ne touchez pas les tuyaux !</li>
-            </ol>
-            <div class="buttons">
-                <button class="btn" onClick="window.location.reload();"><span></span>
-                    <p data-start="good luck!" data-text="start!" data-title="new game"></p>
-                </button>
-            </div>
-            <h3>Points : <span id="score">0</span></h3>
-            <h3>Record : <span id="record">0</span></h3>
-        </div>
 
-        <div id="game">
-            <!-- <p>Appuyez sur espace pour commencer </p> -->
-            <div id="block"></div>
-            <div id="hole"></div>
-            <div id="character"></div>
-        </div>
-    </section>
+
+        <h3>Progression du développement : </h3>
+        <table border="1">
+            <tr>
+                <td>Idée</td>
+                <td>✅</td>
+            </tr>
+            <tr>
+                <td>Javascript</td>
+                <td>42%</td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td>35%</td>
+            </tr>
+        </table>
+    </div>
 
     <footer>
         <div class="row">

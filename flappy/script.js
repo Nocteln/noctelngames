@@ -1,25 +1,8 @@
-const text = document.querySelector("p");
-const espaceDeJeu = document.getElementById("game");
 var block = document.getElementById("block");
 var hole = document.getElementById("hole");
 var character = document.getElementById("character");
 var jumping = 0;
 var counter = 0;
-let gameStart = false;
-
-window.addEventListener("keydown", (e) => {
-  if ((e.key = " ")) {
-    text.style.display = "none";
-    gameStart = true;
-    jump();
-  }
-});
-espaceDeJeu.addEventListener("click", () => {
-  if (gameStart == false) {
-    text.style.display = "none";
-    gameStart = true;
-  }
-});
 
 hole.addEventListener("animationiteration", () => {
   var random = -(Math.random() * 300 + 150);
@@ -30,10 +13,8 @@ setInterval(function () {
   var characterTop = parseInt(
     window.getComputedStyle(character).getPropertyValue("top")
   );
-  if (jumping == 0 && gameStart) {
+  if (jumping == 0) {
     character.style.top = characterTop + 3 + "px";
-    block.style.animation = "block 2s infinite linear";
-    hole.style.animation = "block 2s infinite linear";
   }
   var blockLeft = parseInt(
     window.getComputedStyle(block).getPropertyValue("left")
@@ -46,10 +27,7 @@ setInterval(function () {
       blockLeft > -50 &&
       (cTop < holeTop || cTop > holeTop + 130))
   ) {
-    gameStart = false;
     alert("Game over. Score: " + (counter - 1));
-    block.style.animation = "none";
-    hole.style.animation = "none";
     character.style.top = 100 + "px";
     counter = 0;
   }

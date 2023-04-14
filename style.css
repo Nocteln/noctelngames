@@ -121,7 +121,7 @@ header  a::before {
     background-color: #ed3c57;
   }
   
-  header  a:hover::before {
+  header ul a:hover::before {
   transform-origin: left;
   transform: scaleX(1);
 }
@@ -323,7 +323,7 @@ label{
 .quiconce {
   display: flex;
   align-items: center;
-  padding-bottom: 5%;
+  padding-bottom: 10%;
 }
 
 .quiconce p, .quiconce h2, .quiconce button{
@@ -502,7 +502,7 @@ footer a:hover {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding-top: 25vh;
+  padding-top: 20vh;
 }
 
 .parametres {
