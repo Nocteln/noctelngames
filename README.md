@@ -1,3 +1,3 @@
 # noctelngames
 
-[acceder au site](https://nocteln.space)
+[acceder au site](https://noctlen.space)
