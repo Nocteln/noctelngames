@@ -7,6 +7,7 @@
     height: 500px;
     border: 1px solid black;
     overflow: hidden;
+    object-fit: cover;
 }
 #block {
     width: 50px;
